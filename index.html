@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Akademi | Giriş</title>
+    <title>Rota Akademi | Geleceğe Rotala</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="glass-box">
+    <div class="bg-effects">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="glass-card">
             <header>
-                <h1 class="brand-name">ROTA<span>AKADEMİ</span></h1>
-                <p class="tagline">Zihinsel sınırlarını zorlamaya hazır mısın?</p>
+                <h1 class="main-logo">ROTA<span>AKADEMİ</span></h1>
+                <p class="description">Zihinsel sınırlarını zorlamaya hazır mısın?</p>
             </header>
 
-            <form id="authForm">
-                <div class="input-group">
+            <form id="loginForm">
+                <div class="field">
                     <input type="text" placeholder="Kullanıcı Adı" required>
                 </div>
-                <div id="email-field" class="input-group hidden">
+                <div id="register-email" class="field hidden">
                     <input type="email" placeholder="E-posta Adresi">
                 </div>
-                <div class="input-group">
+                <div class="field">
                     <input type="password" placeholder="Şifre" required>
                 </div>
-                <button type="submit" class="login-btn">Giriş Yap</button>
+                <button type="submit" class="submit-btn">Giriş Yap</button>
             </form>
 
-            <div class="toggle-footer">
-                <p id="toggle-text">Henüz kayıt olmadın mı? <a href="#" onclick="toggleMode(event)">Kayıt Ol</a></p>
+            <div class="auth-footer">
+                <p id="footer-note">Henüz kayıt olmadın mı? <a href="#" onclick="toggleAuth(event)">Kayıt Ol</a></p>
             </div>
         </div>
     </div>
