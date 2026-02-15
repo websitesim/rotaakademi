@@ -1,17 +1,23 @@
-let isReg = false;
-function toggle() {
-    const email = document.getElementById('email-area');
-    const hint = document.getElementById('toggle-hint');
-    const btn = document.querySelector('.btn-main');
-    isReg = !isReg;
+let isRegisterMode = false;
 
-    if(isReg) {
-        email.classList.remove('hidden');
-        btn.innerText = "Kayıt Ol";
-        hint.innerHTML = 'Zaten üye misin? <a href="javascript:void(0)" onclick="toggle()">Giriş Yap</a>';
+function switchForm(e) {
+    e.preventDefault();
+    const emailGroup = document.getElementById('email-group');
+    const submitBtn = document.querySelector('.submit-btn');
+    const toggleMsg = document.getElementById('toggle-msg');
+    const title = document.querySelector('.logo');
+    
+    isRegisterMode = !isRegisterMode;
+
+    if (isRegisterMode) {
+        emailGroup.classList.remove('hidden');
+        submitBtn.innerText = "Hesap Oluştur";
+        toggleMsg.innerHTML = 'Zaten üye misin? <a href="#" onclick="switchForm(event)">Giriş Yap</a>';
+        title.style.transform = "scale(0.9)";
     } else {
-        email.classList.add('hidden');
-        btn.innerText = "Giriş Yap";
-        hint.innerHTML = 'Hesabın yok mu? <a href="javascript:void(0)" onclick="toggle()">Kayıt Ol</a>';
+        emailGroup.classList.add('hidden');
+        submitBtn.innerText = "Giriş Yap";
+        toggleMsg.innerHTML = 'Henüz kayıt olmadın mı? <a href="#" onclick="switchForm(event)">Kayıt Ol</a>';
+        title.style.transform = "scale(1)";
     }
 }
