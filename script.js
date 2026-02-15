@@ -1,23 +1,22 @@
-let isRegisterMode = false;
+let isRegister = false;
 
-function switchForm(e) {
-    e.preventDefault();
-    const emailGroup = document.getElementById('email-group');
-    const submitBtn = document.querySelector('.submit-btn');
-    const toggleMsg = document.getElementById('toggle-msg');
-    const title = document.querySelector('.logo');
-    
-    isRegisterMode = !isRegisterMode;
+function toggleMode() {
+    const emailBox = document.getElementById('emailBox');
+    const toggleText = document.getElementById('toggleText');
+    const actionBtn = document.querySelector('.action-btn');
+    const mainTitle = document.querySelector('.main-title');
 
-    if (isRegisterMode) {
-        emailGroup.classList.remove('hidden');
-        submitBtn.innerText = "Hesap Oluştur";
-        toggleMsg.innerHTML = 'Zaten üye misin? <a href="#" onclick="switchForm(event)">Giriş Yap</a>';
-        title.style.transform = "scale(0.9)";
+    isRegister = !isRegister;
+
+    if (isRegister) {
+        emailBox.classList.remove('hidden');
+        actionBtn.innerText = "Kayıt Ol";
+        toggleText.innerHTML = 'Zaten üye misin? <a href="javascript:void(0)" onclick="toggleMode()">Giriş Yap</a>';
+        mainTitle.innerHTML = 'Hemen <span>KATIL</span>';
     } else {
-        emailGroup.classList.add('hidden');
-        submitBtn.innerText = "Giriş Yap";
-        toggleMsg.innerHTML = 'Henüz kayıt olmadın mı? <a href="#" onclick="switchForm(event)">Kayıt Ol</a>';
-        title.style.transform = "scale(1)";
+        emailBox.classList.add('hidden');
+        actionBtn.innerText = "Giriş Yap";
+        toggleText.innerHTML = 'Hesabın yok mu? <a href="javascript:void(0)" onclick="toggleMode()">Kayıt Ol</a>';
+        mainTitle.innerHTML = 'ROTA<span>AKADEMİ</span>';
     }
 }
