@@ -1,22 +1,23 @@
-let isRegister = false;
+let mode = "login";
 
-function toggleMode() {
-    const emailBox = document.getElementById('emailBox');
-    const toggleText = document.getElementById('toggleText');
-    const actionBtn = document.querySelector('.action-btn');
-    const mainTitle = document.querySelector('.main-title');
+function toggle(e) {
+    e.preventDefault();
+    const extraField = document.getElementById('extra-field');
+    const btn = document.querySelector('.btn-submit');
+    const msg = document.getElementById('msg');
+    const title = document.querySelector('.logo');
 
-    isRegister = !isRegister;
-
-    if (isRegister) {
-        emailBox.classList.remove('hidden');
-        actionBtn.innerText = "Kayıt Ol";
-        toggleText.innerHTML = 'Zaten üye misin? <a href="javascript:void(0)" onclick="toggleMode()">Giriş Yap</a>';
-        mainTitle.innerHTML = 'Hemen <span>KATIL</span>';
+    if (mode === "login") {
+        mode = "register";
+        extraField.classList.remove('hidden');
+        btn.innerText = "Hesap Oluştur";
+        msg.innerHTML = 'Zaten üye misin? <a href="#" onclick="toggle(event)">Giriş Yap</a>';
+        title.innerHTML = "KATIL<span>BİZE</span>";
     } else {
-        emailBox.classList.add('hidden');
-        actionBtn.innerText = "Giriş Yap";
-        toggleText.innerHTML = 'Hesabın yok mu? <a href="javascript:void(0)" onclick="toggleMode()">Kayıt Ol</a>';
-        mainTitle.innerHTML = 'ROTA<span>AKADEMİ</span>';
+        mode = "login";
+        extraField.classList.add('hidden');
+        btn.innerText = "Hemen Başla";
+        msg.innerHTML = 'Hesabın yok mu? <a href="#" onclick="toggle(event)">Kayıt Ol</a>';
+        title.innerHTML = "ROTA<span>AKADEMİ</span>";
     }
 }
