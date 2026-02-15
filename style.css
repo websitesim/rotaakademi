@@ -1,63 +1,136 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
 
 body {
-    background: #050a18;
+    background: #020617; /* GitHub koyu tema tarzı derin lacivert */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    position: relative;
 }
 
-/* Arka plandaki dev parlayan beyin */
-.brain-background-svg {
+/* Arka Plan Efekti */
+.background-overlay {
     position: absolute;
-    width: 700px;
-    height: 700px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 0;
-    opacity: 0.15; /* Parlaklığı buradan artırabilirsin (örn: 0.3) */
-    filter: drop-shadow(0 0 50px #38bdf8);
-    animation: float 8s infinite ease-in-out;
-}
-.brain-background-svg svg { fill: #38bdf8; width: 100%; height: 100%; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-20px) scale(1.05); }
 }
 
-/* Cam Kutu */
-.glass-box {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 60px;
-    border-radius: 50px;
-    width: 420px;
+.main-brain-svg {
+    width: 650px;
+    height: 650px;
+    opacity: 0.1;
+    filter: drop-shadow(0 0 30px #38bdf8);
+    animation: brainFloat 10s infinite ease-in-out;
+}
+
+.main-brain-svg svg {
+    fill: #38bdf8;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes brainFloat {
+    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+    50% { transform: translateY(-30px) scale(1.05) rotate(2deg); }
+}
+
+/* Cam Kart (Glassmorphism) */
+.auth-container {
     z-index: 10;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 50px;
+    width: 400px;
     text-align: center;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
 }
 
-.logo-text { color: white; font-size: 2rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 30px; }
-.logo-text span { color: #38bdf8; }
-.brand p { color: #64748b; margin-top: -25px; margin-bottom: 30px; font-size: 0.9rem; }
-
-.input-field { margin-bottom: 15px; }
-.input-field input {
-    width: 100%; padding: 18px; border-radius: 15px; border: none;
-    background: rgba(255, 255, 255, 0.05); color: white; outline: none;
+.logo {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
 }
-.input-field input:focus { background: rgba(255, 255, 255, 0.1); box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
 
-.btn-main {
-    width: 100%; padding: 18px; border-radius: 15px; border: none;
-    background: #38bdf8; color: #050a18; font-weight: 800; font-size: 1rem;
-    cursor: pointer; transition: 0.3s; margin-top: 10px;
+.logo span {
+    color: #38bdf8;
 }
-.btn-main:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); }
 
+#sub-text {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* Form Elemanları */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #38bdf8;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: #38bdf8;
+    color: #020617;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+.card-footer {
+    margin-top: 25px;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.card-footer a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hidden { display: none; }
 .toggle-container { margin-top: 25px; color: #64748b; font-size: 0.85rem; }
 .toggle-container a { color: #38bdf8; text-decoration: none; font-weight: 800; }
 .hidden { display: none; }
