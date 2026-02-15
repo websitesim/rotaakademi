@@ -5,27 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rota Akademi | Giriş</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-    <div class="glass-card">
-        <h1 id="title">ROTA <span>AKADEMİ</span></h1>
-        <p id="subtitle">Eğitim yolculuğuna başla.</p>
-        
-        <form id="authForm">
-            <input type="text" placeholder="Kullanıcı Adı" required>
-            <input type="email" id="emailField" placeholder="E-posta" style="display: none;">
-            <input type="password" placeholder="Şifre" required>
-            <button type="submit" class="btn">Giriş Yap</button>
-        </form>
+    <div class="main-container">
+        <div class="glass-box">
+            <header>
+                <h1 class="brand-name">ROTA<span>AKADEMİ</span></h1>
+                <p class="tagline">Zihinsel sınırlarını zorlamaya hazır mısın?</p>
+            </header>
 
-        <div class="switch">
-            <p id="toggleText">Hesabın yok mu? <a href="javascript:void(0)" onclick="toggle()">Kayıt Ol</a></p>
+            <form id="authForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Kullanıcı Adı" required>
+                </div>
+                <div id="email-field" class="input-group hidden">
+                    <input type="email" placeholder="E-posta Adresi">
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Şifre" required>
+                </div>
+                <button type="submit" class="login-btn">Giriş Yap</button>
+            </form>
+
+            <div class="toggle-footer">
+                <p id="toggle-text">Henüz kayıt olmadın mı? <a href="#" onclick="toggleMode(event)">Kayıt Ol</a></p>
+            </div>
         </div>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
