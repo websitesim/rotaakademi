@@ -3,46 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Akademi | Gelecek Burada</title>
+    <title>Rota Akademi | Giriş</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="bg-blur">
-        <div class="blob-1"></div>
-        <div class="blob-2"></div>
-    </div>
+<div class="container">
+    <div class="glass-card">
+        <h1 id="title">ROTA <span>AKADEMİ</span></h1>
+        <p id="subtitle">Eğitim yolculuğuna başla.</p>
+        
+        <form id="authForm">
+            <input type="text" placeholder="Kullanıcı Adı" required>
+            <input type="email" id="emailField" placeholder="E-posta" style="display: none;">
+            <input type="password" placeholder="Şifre" required>
+            <button type="submit" class="btn">Giriş Yap</button>
+        </form>
 
-    <div class="auth-wrapper">
-        <div class="glass-card">
-            <div class="brand">
-                <div class="neon-circle">
-                    <span class="logo-icon">R</span>
-                </div>
-                <h1 class="logo-text">ROTA<span>AKADEMİ</span></h1>
-                <p>Eğitimin Yeni Rotası</p>
-            </div>
-
-            <form id="auth-form">
-                <div class="input-container">
-                    <input type="text" placeholder="Kullanıcı Adı" id="user" required>
-                </div>
-                <div id="email-box" class="input-container hidden">
-                    <input type="email" placeholder="E-posta Adresi" id="email">
-                </div>
-                <div class="input-container">
-                    <input type="password" placeholder="Şifre" id="pass" required>
-                </div>
-                <button type="submit" class="glow-button">Hadi Başlayalım</button>
-            </form>
-
-            <div class="form-footer">
-                <p id="switch-text">Hesabın yok mu? <a href="#" onclick="toggle(event)">Kayıt Ol</a></p>
-            </div>
+        <div class="switch">
+            <p id="toggleText">Hesabın yok mu? <a href="javascript:void(0)" onclick="toggle()">Kayıt Ol</a></p>
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
