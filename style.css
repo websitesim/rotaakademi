@@ -1,72 +1,54 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
 
 body {
-    background: #020617; /* Gece mavisi arka plan */
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    position: relative;
 }
 
-/* Arka plandaki yumuşak ışıklar */
-.bg-blur {
-    position: absolute;
-    width: 100%; height: 100%;
-    z-index: 0;
-}
-.blob-1 { position: absolute; width: 500px; height: 500px; background: #3b82f6; filter: blur(120px); border-radius: 50%; top: -10%; left: -5%; opacity: 0.3; }
-.blob-2 { position: absolute; width: 500px; height: 500px; background: #8b5cf6; filter: blur(120px); border-radius: 50%; bottom: -10%; right: -5%; opacity: 0.3; }
-
-/* Cam Kart (Glassmorphism) */
 .glass-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 50px 40px;
-    width: 400px;
-    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
     text-align: center;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Logo Alanı */
-.neon-circle {
-    width: 60px; height: 60px;
-    border: 2px solid #38bdf8;
-    border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    margin: 0 auto 15px;
-    box-shadow: 0 0 15px #38bdf8;
-}
-.logo-icon { color: #38bdf8; font-weight: 900; font-size: 1.5rem; }
-.logo-text { color: white; font-size: 2rem; font-weight: 900; letter-spacing: -1px; }
-.logo-text span { color: #38bdf8; }
-.brand p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 30px; }
+h1 { color: white; margin-bottom: 10px; }
+h1 span { color: #38bdf8; }
+p { color: #cbd5e1; margin-bottom: 20px; font-size: 0.9rem; }
 
-/* Inputlar */
-.input-container { margin-bottom: 15px; }
-.input-container input {
-    width: 100%; padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    color: white; outline: none; transition: 0.3s;
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
 }
-.input-container input:focus { border-color: #38bdf8; background: rgba(255, 255, 255, 0.1); }
 
-/* Parlayan Buton */
-.glow-button {
-    width: 100%; padding: 15px;
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
-    border: none; border-radius: 12px;
-    color: #020617; font-weight: 800; font-size: 1rem;
-    cursor: pointer; transition: 0.3s;
+input::placeholder { color: #94a3b8; }
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.glow-button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4); }
 
-.form-footer { margin-top: 25px; color: #64748b; font-size: 0.85rem; }
-.form-footer a { color: #38bdf8; text-decoration: none; font-weight: 600; }
-.hidden { display: none; }
+.btn:hover { background: #0ea5e9; }
+
+.switch { margin-top: 20px; font-size: 0.8rem; color: #cbd5e1; }
+.switch a { color: #38bdf8; text-decoration: none; font-weight: bold; }
