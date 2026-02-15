@@ -1,23 +1,23 @@
-let mode = "login";
+let isSignUp = false;
 
 function toggle(e) {
     e.preventDefault();
-    const extraField = document.getElementById('extra-field');
-    const btn = document.querySelector('.btn-submit');
-    const msg = document.getElementById('msg');
-    const title = document.querySelector('.logo');
+    const emailBox = document.getElementById('email-box');
+    const btn = document.querySelector('.glow-button');
+    const switchText = document.getElementById('switch-text');
+    const title = document.querySelector('.logo-text');
 
-    if (mode === "login") {
-        mode = "register";
-        extraField.classList.remove('hidden');
-        btn.innerText = "Hesap Oluştur";
-        msg.innerHTML = 'Zaten üye misin? <a href="#" onclick="toggle(event)">Giriş Yap</a>';
-        title.innerHTML = "KATIL<span>BİZE</span>";
+    isSignUp = !isSignUp;
+
+    if (isSignUp) {
+        emailBox.classList.remove('hidden');
+        btn.innerText = "Kayıt Ol";
+        switchText.innerHTML = 'Zaten üye misin? <a href="#" onclick="toggle(event)">Giriş Yap</a>';
+        title.innerHTML = "Hemen<span>KATIL</span>";
     } else {
-        mode = "login";
-        extraField.classList.add('hidden');
-        btn.innerText = "Hemen Başla";
-        msg.innerHTML = 'Hesabın yok mu? <a href="#" onclick="toggle(event)">Kayıt Ol</a>';
+        emailBox.classList.add('hidden');
+        btn.innerText = "Hadi Başlayalım";
+        switchText.innerHTML = 'Hesabın yok mu? <a href="#" onclick="toggle(event)">Kayıt Ol</a>';
         title.innerHTML = "ROTA<span>AKADEMİ</span>";
     }
 }
