@@ -1,21 +1,23 @@
-let isLogin = true;
+let isRegister = false;
 
-function toggle() {
-    isLogin = !isLogin;
-    const title = document.getElementById('title');
-    const emailField = document.getElementById('emailField');
-    const toggleText = document.getElementById('toggleText');
-    const btn = document.querySelector('.btn');
+function toggleMode(e) {
+    e.preventDefault();
+    const emailField = document.getElementById('email-field');
+    const toggleText = document.getElementById('toggle-text');
+    const submitBtn = document.querySelector('.login-btn');
+    const title = document.querySelector('.brand-name');
 
-    if (!isLogin) {
-        title.innerHTML = "KAYIT <span>OL</span>";
-        emailField.style.display = "block";
-        btn.innerText = "Hesap Oluştur";
-        toggleText.innerHTML = 'Zaten üye misin? <a href="javascript:void(0)" onclick="toggle()">Giriş Yap</a>';
+    isRegister = !isRegister;
+
+    if (isRegister) {
+        emailField.classList.remove('hidden');
+        submitBtn.innerText = "Kayıt Ol";
+        toggleText.innerHTML = 'Zaten üye misin? <a href="#" onclick="toggleMode(event)">Giriş Yap</a>';
+        title.innerHTML = "Hemen<span>KATIL</span>";
     } else {
-        title.innerHTML = "ROTA <span>AKADEMİ</span>";
-        emailField.style.display = "none";
-        btn.innerText = "Giriş Yap";
-        toggleText.innerHTML = 'Hesabın yok mu? <a href="javascript:void(0)" onclick="toggle()">Kayıt Ol</a>';
+        emailField.classList.add('hidden');
+        submitBtn.innerText = "Giriş Yap";
+        toggleText.innerHTML = 'Henüz kayıt olmadın mı? <a href="#" onclick="toggleMode(event)">Kayıt Ol</a>';
+        title.innerHTML = "ROTA<span>AKADEMİ</span>";
     }
 }
