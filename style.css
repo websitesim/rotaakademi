@@ -1,105 +1,43 @@
 * {
     margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    /* Simsiyah yerine görseldeki gibi merkezden yayılan derin lacivert */
-    background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
-    height: 100vh;
+    background-color: #f8f9fa;
+    color: #2d3436;
+}
+
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    overflow: hidden;
-    position: relative;
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); /* Modern cam efekti */
+    position: sticky;
+    top: 0;
 }
 
-/* Arka plandaki renk sızıntıları */
-.bg-effects {
-    position: absolute;
-    width: 100%; height: 100%;
-    z-index: 0;
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-.glow-1 {
-    position: absolute;
-    top: -10%; left: -10%;
-    width: 500px; height: 500px;
-    background: rgba(56, 189, 248, 0.1);
-    filter: blur(120px);
-    border-radius: 50%;
-}
+.logo span { color: #6c5ce7; } /* Ana vurgu rengi */
 
-.glow-2 {
-    position: absolute;
-    bottom: -10%; right: -10%;
-    width: 600px; height: 600px;
-    background: rgba(129, 140, 248, 0.08);
-    filter: blur(150px);
-    border-radius: 50%;
-}
-
-/* Cam Kart Tasarımı */
-.glass-card {
-    position: relative;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 40px;
-    padding: 60px 45px;
-    width: 420px;
-    text-align: center;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-}
-
-.main-logo {
+.btn-primary {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
     color: white;
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: -1.5px;
-    margin-bottom: 10px;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px; /* Yuvarlak köşeler genç hissettirir */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    transition: 0.3s;
 }
 
-.main-logo span {
-    color: #38bdf8;
+.btn-primary:hover {
+    transform: translateY(-3px);
 }
-
-.description {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-}
-
-/* Form Elemanları */
-.field { margin-bottom: 15px; }
-input {
-    width: 100%; padding: 18px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
-    color: white; outline: none;
-    transition: 0.3s ease;
-}
-input:focus { border-color: #38bdf8; background: rgba(255, 255, 255, 0.1); }
-input::placeholder { color: #475569; }
-
-/* Görseldeki Parlak Mavi Buton */
-.submit-btn {
-    width: 100%; padding: 18px;
-    border-radius: 15px; border: none;
-    background: #38bdf8;
-    color: #020617;
-    font-weight: 800; font-size: 1.1rem;
-    cursor: pointer; transition: 0.3s;
-    margin-top: 10px;
-}
-.submit-btn:hover {
-    background: #7dd3fc;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
-}
-
-.auth-footer { margin-top: 30px; color: #64748b; font-size: 0.9rem; }
-.auth-footer a { color: #38bdf8; text-decoration: none; font-weight: 700; }
-.hidden { display: none; }
