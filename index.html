@@ -1,48 +1,36 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Akademi | Giriş Yap</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="auth-container">
-        <div class="auth-visual">
-            <div class="logo">ROTA<span>AKADEMİ</span></div>
-            <h1>Gelecek burada <br>şekilleniyor.</h1>
-            <p>Rotanı belirle, yeteneklerini geliştir ve topluluğa katıl.</p>
+<div class="main-wrapper">
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+
+    <div class="auth-card">
+        <div class="brand">
+            <div class="logo-symbol">R</div>
+            <span>ROTA AKADEMİ</span>
         </div>
+        
+        <header>
+            <h1>Yolculuk Başlıyor.</h1>
+            <p>Zihnini özgür bırak, öğrenmeye devam et.</p>
+        </header>
 
-        <div class="auth-form-section">
-            <div class="form-box">
-                <h2>Hoş Geldin</h2>
-                <p>Hesabına giriş yap veya yeni bir rota oluştur.</p>
-
-                <form id="authForm">
-                    <div class="input-group">
-                        <label>E-posta</label>
-                        <input type="email" id="email" placeholder="ad@ornek.com" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Şifre</label>
-                        <input type="password" id="password" placeholder="••••••••" required>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary">Giriş Yap</button>
-                    
-                    <div class="divider">veya</div>
-                    
-                    <button type="button" class="btn-google">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
-                        Google ile devam et
-                    </button>
-                </form>
-
-                <p class="switch-form">Hesabın yok mu? <a href="#">Hemen Kaydol</a></p>
+        <div class="form-grid">
+            <div class="input-field">
+                <input type="text" placeholder=" " id="email">
+                <label>E-posta</label>
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder=" " id="pass">
+                <label>Şifre</label>
             </div>
         </div>
+
+        <button class="prime-btn">
+            <span>Giriş Yap</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
+        <div class="footer">
+            <span>Henüz bir rotan yok mu? <a href="#">Aramıza Katıl</a></span>
+        </div>
     </div>
-</body>
-</html>
+</div>
