@@ -1,76 +1,89 @@
 :root {
-    --accent: #ff4d00; /* Enerjik Turuncu - Genç ve dinamik */
-    --deep-blue: #0a0a20;
-    --soft-gray: #f2f2f7;
+    --bg-main: #fcfcfd;
+    --accent: #6366f1; /* Canlı İndigo */
+    --text-bold: #0f172a;
+    --text-soft: #64748b;
     --white: #ffffff;
-    --glass: rgba(255, 255, 255, 0.7);
+    --border: #e2e8f0;
 }
 
-body {
-    background: radial-gradient(circle at top right, #fff5f0, #ffffff 40%);
-    min-height: 100vh;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 
-/* Navigasyon: Minimalist ve havada süzülen */
-nav {
-    max-width: 90%;
-    margin: 20px auto;
-    padding: 15px 30px;
-    background: var(--glass);
-    backdrop-filter: blur(20px);
-    border-radius: 100px;
-    border: 1px solid rgba(0,0,0,0.05);
+body { background-color: var(--bg-main); height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+.auth-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 1000px;
+    height: 650px;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
-/* Hero: Devasa Tipografi ve Dinamik Yerleşim */
-.hero h1 {
-    font-size: 7vw; /* Ekrana göre ölçeklenen dev font */
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -4px;
-    text-transform: uppercase;
-    color: var(--deep-blue);
-    margin-top: 80px;
-}
-
-.hero h1 span {
-    display: block;
-    color: transparent;
-    -webkit-text-stroke: 1.5px var(--deep-blue); /* İçi boş font efekti */
-}
-
-/* CTA: Standart buton değil, bir nesne gibi */
-.cta-main {
-    margin-top: 40px;
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: var(--deep-blue);
-    color: white;
-    padding: 8px 8px 8px 25px;
-    border-radius: 100px;
-    text-transform: uppercase;
-    font-weight: 700;
-    transition: 0.4s;
-}
-
-.cta-main .icon-circle {
-    width: 50px;
-    height: 50px;
+/* Sol taraftaki estetik alan */
+.auth-visual {
+    flex: 1;
     background: var(--accent);
-    border-radius: 50%;
+    background-image: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+    padding: 60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.auth-visual .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; }
+.auth-visual .logo span { opacity: 0.7; }
+
+.auth-visual h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+
+/* Form Alanı */
+.auth-form-section { flex: 1.2; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.form-box { width: 100%; max-width: 360px; }
+
+h2 { font-size: 1.8rem; color: var(--text-bold); margin-bottom: 8px; }
+.form-box > p { color: var(--text-soft); font-size: 0.95rem; margin-bottom: 32px; }
+
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-bold); }
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    outline: none;
+    transition: 0.2s;
+}
+.input-group input:focus { border-color: var(--accent); ring: 2px rgba(99, 102, 241, 0.2); }
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: var(--text-bold);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.divider { text-align: center; margin: 20px 0; color: var(--text-soft); font-size: 0.8rem; position: relative; }
+
+.btn-google {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-/* Animasyon: Sayfa yüklenince elementlerin süzülmesi */
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-content { animation: slideUp 1s ease-out forwards; }
+.switch-form { text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--text-soft); }
+.switch-form a { color: var(--accent); text-decoration: none; font-weight: 600; }
