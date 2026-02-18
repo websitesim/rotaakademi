@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Akademi | Eğitimde Yeni Yol</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Rota Akademi | Giriş Yap</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <header>
-            <nav class="container">
-                <div class="logo">ROTA<span>AKADEMİ</span></div>
-                <div class="auth-btns">
-                    <button id="loginBtn">Giriş Yap</button>
-                    <button id="registerBtn" class="primary">Kaydol</button>
-                </div>
-            </nav>
-        </header>
+    <div class="auth-container">
+        <div class="auth-visual">
+            <div class="logo">ROTA<span>AKADEMİ</span></div>
+            <h1>Gelecek burada <br>şekilleniyor.</h1>
+            <p>Rotanı belirle, yeteneklerini geliştir ve topluluğa katıl.</p>
+        </div>
 
-        <main class="hero container">
-            <h1>Eğitimde Kendi <br><mark>Rotanı Çiz</mark></h1>
-            <p>Geleceğin becerilerini bugünden, en modern yöntemlerle öğrenmeye başla.</p>
-            <div class="hero-actions">
-                <button class="cta">Eğitimleri Keşfet</button>
+        <div class="auth-form-section">
+            <div class="form-box">
+                <h2>Hoş Geldin</h2>
+                <p>Hesabına giriş yap veya yeni bir rota oluştur.</p>
+
+                <form id="authForm">
+                    <div class="input-group">
+                        <label>E-posta</label>
+                        <input type="email" id="email" placeholder="ad@ornek.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Şifre</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Giriş Yap</button>
+                    
+                    <div class="divider">veya</div>
+                    
+                    <button type="button" class="btn-google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                        Google ile devam et
+                    </button>
+                </form>
+
+                <p class="switch-form">Hesabın yok mu? <a href="#">Hemen Kaydol</a></p>
             </div>
-        </main>
+        </div>
     </div>
-
-    <script src="app.js"></script>
 </body>
 </html>
