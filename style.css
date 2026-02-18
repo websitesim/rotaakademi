@@ -1,142 +1,76 @@
-/* Değişkenler - Renk Paletini Buradan Yönetebilirsin */
 :root {
-    --primary: #4f46e5;       /* Modern İndigo Mavisi */
-    --primary-hover: #4338ca;
-    --text-dark: #1e293b;     /* Başlıklar için koyu gri-mavi */
-    --text-light: #64748b;    /* Açıklamalar için yumuşak gri */
-    --bg-white: #ffffff;
-    --bg-soft: #f8fafc;       /* Arka plan için çok hafif gri */
-    --border: #e2e8f0;
-    --radius: 12px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    --accent: #ff4d00; /* Enerjik Turuncu - Genç ve dinamik */
+    --deep-blue: #0a0a20;
+    --soft-gray: #f2f2f7;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.7);
 }
 
 body {
-    background-color: var(--bg-soft);
-    color: var(--text-dark);
-    line-height: 1.5;
+    background: radial-gradient(circle at top right, #fff5f0, #ffffff 40%);
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Header & Navigasyon */
-header {
-    background: var(--bg-white);
-    border-bottom: 1px solid var(--border);
-    padding: 1.2rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
+/* Navigasyon: Minimalist ve havada süzülen */
 nav {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-radius: 100px;
+    border: 1px solid rgba(0,0,0,0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 900;
-    letter-spacing: -1px;
-    color: var(--text-dark);
-}
-
-.logo span {
-    color: var(--primary);
-}
-
-.auth-btns {
-    display: flex;
-    gap: 1rem;
-}
-
-button {
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    border: none;
-    border-radius: var(--radius);
-    padding: 0.6rem 1.2rem;
-}
-
-#loginBtn {
-    background: transparent;
-    color: var(--text-light);
-}
-
-#loginBtn:hover {
-    color: var(--text-dark);
-}
-
-button.primary {
-    background: var(--primary);
-    color: white;
-}
-
-button.primary:hover {
-    background: var(--primary-hover);
-    transform: translateY(-1px);
-}
-
-/* Hero (Karşılama) Bölümü */
-.hero {
-    padding: 100px 0;
-    text-align: center;
-}
-
+/* Hero: Devasa Tipografi ve Dinamik Yerleşim */
 .hero h1 {
-    font-size: 4rem;
+    font-size: 7vw; /* Ekrana göre ölçeklenen dev font */
     font-weight: 900;
-    letter-spacing: -2px;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    color: var(--deep-blue);
+    margin-top: 80px;
 }
 
-mark {
-    background: transparent;
-    color: var(--primary);
-    position: relative;
+.hero h1 span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--deep-blue); /* İçi boş font efekti */
 }
 
-/* Altını hafifçe çizen modern bir efekt */
-mark::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background: rgba(79, 70, 229, 0.1);
-    z-index: -1;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-}
-
-.cta {
-    background: var(--primary);
+/* CTA: Standart buton değil, bir nesne gibi */
+.cta-main {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--deep-blue);
     color: white;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+    padding: 8px 8px 8px 25px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.4s;
 }
 
-.cta:hover {
-    transform: scale(1.05);
+.cta-main .icon-circle {
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Animasyon: Sayfa yüklenince elementlerin süzülmesi */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content { animation: slideUp 1s ease-out forwards; }
