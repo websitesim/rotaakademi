@@ -3,34 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Akademi | Başarıya Giden Rota</title>
+    <title>Rota Akademi | Eğitimde Yeni Yol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="app">
+        <header>
+            <nav class="container">
+                <div class="logo">ROTA<span>AKADEMİ</span></div>
+                <div class="auth-btns">
+                    <button id="loginBtn">Giriş Yap</button>
+                    <button id="registerBtn" class="primary">Kaydol</button>
+                </div>
+            </nav>
+        </header>
 
-    <nav class="navbar">
-        <div class="logo">ROTA <span>AKADEMİ</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Kurslar</a></li>
-            <li><a href="#">Eğitmenler</a></li>
-            <li><a href="#">Hakkımızda</a></li>
-            <li><a href="#" class="btn-login">Giriş Yap</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Kendi Rotanı <br> <span class="highlight">Kendin Çiz.</span></h1>
-            <p>Modern eğitim teknikleriyle, istediğin alanda uzmanlaşmaya bugün başla.</p>
-            <div class="hero-btns">
-                <button class="btn-primary">Hemen Başla</button>
-                <button class="btn-secondary">Keşfet</button>
+        <main class="hero container">
+            <h1>Eğitimde Kendi <br><mark>Rotanı Çiz</mark></h1>
+            <p>Geleceğin becerilerini bugünden, en modern yöntemlerle öğrenmeye başla.</p>
+            <div class="hero-actions">
+                <button class="cta">Eğitimleri Keşfet</button>
             </div>
-        </div>
-        <div class="hero-image">
-            </div>
-    </header>
+        </main>
+    </div>
 
+    <script src="app.js"></script>
 </body>
 </html>
