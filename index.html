@@ -3,43 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Akademi | Geleceğe Rotala</title>
+    <title>Rota Akademi | Başarıya Giden Rota</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="bg-effects">
-        <div class="glow-1"></div>
-        <div class="glow-2"></div>
-    </div>
+    <nav class="navbar">
+        <div class="logo">ROTA <span>AKADEMİ</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Kurslar</a></li>
+            <li><a href="#">Eğitmenler</a></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#" class="btn-login">Giriş Yap</a></li>
+        </ul>
+    </nav>
 
-    <div class="wrapper">
-        <div class="glass-card">
-            <header>
-                <h1 class="main-logo">ROTA<span>AKADEMİ</span></h1>
-                <p class="description">Zihinsel sınırlarını zorlamaya hazır mısın?</p>
-            </header>
-
-            <form id="loginForm">
-                <div class="field">
-                    <input type="text" placeholder="Kullanıcı Adı" required>
-                </div>
-                <div id="register-email" class="field hidden">
-                    <input type="email" placeholder="E-posta Adresi">
-                </div>
-                <div class="field">
-                    <input type="password" placeholder="Şifre" required>
-                </div>
-                <button type="submit" class="submit-btn">Giriş Yap</button>
-            </form>
-
-            <div class="auth-footer">
-                <p id="footer-note">Henüz kayıt olmadın mı? <a href="#" onclick="toggleAuth(event)">Kayıt Ol</a></p>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Kendi Rotanı <br> <span class="highlight">Kendin Çiz.</span></h1>
+            <p>Modern eğitim teknikleriyle, istediğin alanda uzmanlaşmaya bugün başla.</p>
+            <div class="hero-btns">
+                <button class="btn-primary">Hemen Başla</button>
+                <button class="btn-secondary">Keşfet</button>
             </div>
         </div>
-    </div>
+        <div class="hero-image">
+            </div>
+    </header>
 
-    <script src="script.js"></script>
 </body>
 </html>
